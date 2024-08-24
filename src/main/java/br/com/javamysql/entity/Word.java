@@ -8,21 +8,22 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "words")
+public class Word {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(nullable = false)
-    private String firstName;
+    private String ptWord;
+
     @Column(nullable = false)
-    private String lastName;
-    @Column(nullable = false, unique = true)
-    private String email;
+    private String enWord;
+
     @Column(nullable = false)
-    private String gender;
+    private String ptMeaning;
 }

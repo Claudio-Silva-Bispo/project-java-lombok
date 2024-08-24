@@ -28,13 +28,23 @@ MYSQL
 	$ SELECT * FROM users;
 
 JAVA BACKEND
+    
+    **Configurar Java 17:**
+    $ export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
+    **Verificar versão do Java e saber se está correta**
+    $ java -version
+
+    **Limpar e Buildar Projeto:**
 	$ mvn clean package
 
 	$ mvn -Dmaven.test.skip=true package
+    
+    **Para rodar no terminal**
+    $ mvn spring-boot:run
 
 	$ docker build -t javamysql-backend:latest .
 
 	$ docker run -p 8080:8080 --name java-backend javamysql-backend:latest
 
-	http://localhost:8080/api/users
+	http://localhost:8080/swagger-ui/index.html
